@@ -1,19 +1,19 @@
 ---
 name: axiom-increment
-description: "Bootstrap increment workflow for axiom-sdd using lightweight spec-first orchestration."
+description: "Bootstrap increment workflow for Axiom using lightweight spec-first orchestration."
 argument-hint: "Describe the increment request"
-agent: agent
+agent: axiom-increment
 ---
-Read `AGENTS.md` first and treat it as canonical.
+Read `Axiom.SDD/AGENTS.md` first and treat it as canonical.
 
 Use the user argument as the increment description.
 
 Execute this workflow:
 
 1. Understand the increment request.
-2. Locate the `axiom-spec` sibling repository.
-3. Create or update an increment file in `axiom-spec/increments/`.
-4. If `axiom-spec/increments/` does not exist, use the equivalent increment folder in the spec repository.
+2. Locate the `Axiom.Spec` sibling repository.
+3. Create or update an increment file in `Axiom.Spec/specs/increments/`.
+4. If `Axiom.Spec/specs/increments/` does not exist, use the equivalent increment folder in the spec repository.
 5. Refine the increment with:
    - goal
    - context
@@ -24,7 +24,7 @@ Execute this workflow:
    - open questions
 6. Ask critical questions only when they block safe implementation.
 7. Produce a short internal plan.
-8. Implement focused changes in `axiom-sdd`.
+8. Implement focused changes in `Axiom/` or, when the increment is tooling-only, in `Axiom.SDD/`.
 9. Validate with available commands.
 10. Review implementation against acceptance criteria.
 11. Update `axiom-spec/general-spec.md` only with stable knowledge when needed.
