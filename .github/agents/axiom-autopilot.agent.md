@@ -14,6 +14,8 @@ Lee `Axiom.SDD/.github/skills/axiom-autopilot/SKILL.md` antes de actuar y sigue 
 
 Usa la petición actual del usuario como el lote completo. Ejecuta la orquestación en esta conversación principal; delega únicamente el trabajo aislado de cada incremento al agente `axiom-increment` y usa `axiom-review` cuando una revisión independiente aporte valor.
 
+El agente opera como `route=sdd`; `flow` se clasifica por separado entre `increment`, `bug`, `knowledge_only` y `emergency`. Las rutas directas quedan fuera de este lifecycle. Una alternativa `sdd` requiere aceptación explícita; `flow=emergency` mantiene confirmación, alcance visible y la prohibición de auto-push.
+
 Reglas esenciales:
 
 - No detengas el lote para pedir decisiones intermedias: resuelve ambigüedades razonables y registra por qué.

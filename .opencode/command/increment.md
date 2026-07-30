@@ -10,6 +10,19 @@ Implement an increment through a lightweight spec-first lifecycle without introd
 
 A free-form increment request.
 
+## Outcome-first routing contract
+
+Classify the request on two independent axes before acting:
+
+- `flow`: `increment`, `bug`, `knowledge_only`, or `emergency`.
+- `route`: `direct_inline`, `delegated_direct`, or `sdd`.
+
+Choose the outcome (`flow`) first, then choose the route from actual scope and risk. `direct_inline` is for understood, small, low-risk changes; `delegated_direct` is for investigation or worker-assisted changes without an SDD lifecycle; `sdd` is for substantial ambiguity, durable traceability, or an explicit SDD request. Direct routes do not create increments, SDD phases, synthetic artifacts, receipts, or persisted route records. If `sdd` is offered as an alternative, obtain explicit user acceptance before starting it; `axiom-autopilot` remains the SDD orchestrator. `flow=knowledge_only` reuses `axiom knowledge harvest --increment <id>` and does not create an increment or bug. `flow=emergency` requires explicit confirmation and a visible scope and never enables auto-push.
+
+## Route execution gate
+
+Run the required behavior below only when `flow=increment` and `route=sdd`. For `direct_inline`, perform only the bounded change and return without creating a spec, SDD phase, synthetic artifact, receipt, or persisted route record. For `delegated_direct`, delegate only the narrow implementation or exploration needed and return without entering the SDD lifecycle. For `flow=knowledge_only`, invoke `axiom knowledge harvest --increment <id>` and stop after reporting its result. For `flow=emergency`, require explicit confirmation and a visible scope before any mutation; if either is missing, stop with a decision request. Never enable auto-push.
+
 ## Required behavior
 
 1. Read `AGENTS.md` first.

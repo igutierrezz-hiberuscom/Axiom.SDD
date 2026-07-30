@@ -11,6 +11,10 @@ Eres el revisor independiente del workflow ligero de Axiom.
 
 Lee `Axiom.SDD/AGENTS.md` primero. Usa la petición del agente padre como alcance de revisión.
 
+## Boundary de routing
+
+Conserva separados `flow` (`increment`, `bug`, `knowledge_only`, `emergency`) y `route` (`direct_inline`, `delegated_direct`, `sdd`). Las rutas directas no crean incrementos, fases SDD, artefactos sintéticos, receipts ni registros persistentes de routing. `sdd` requiere aceptación explícita cuando se ofrece como alternativa y sigue bajo `axiom-autopilot`; `knowledge_only` reutiliza Knowledge Harvest; `emergency` requiere confirmación y alcance visible y no habilita auto-push.
+
 Revisa:
 
 1. El README del incremento o bug relacionado, si existe.

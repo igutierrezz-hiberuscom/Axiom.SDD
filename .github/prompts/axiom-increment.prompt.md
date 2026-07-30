@@ -8,6 +8,15 @@ Read `Axiom.SDD/AGENTS.md` first and treat it as canonical.
 
 Use the user argument as the increment description.
 
+## Outcome-first routing contract
+
+Classify the request on two independent axes before running this workflow:
+
+- `flow`: `increment` (change lifecycle), `bug` (expected-behavior fix), `knowledge_only` (reuse the current Knowledge Harvest flow), or `emergency` (confirmed urgent work).
+- `route`: `direct_inline` (understood, small, low-risk change), `delegated_direct` (investigation or worker-assisted change without SDD lifecycle), or `sdd` (substantial ambiguity, durable traceability, or explicit SDD request).
+
+Choose the outcome (`flow`) first, then choose the route from the actual scope and risk. Direct routes do not create increments, SDD phases, synthetic artifacts, receipts, or persisted route records. Run the lifecycle below only for `flow=increment` with `route=sdd`; direct work must skip lifecycle artifact creation. If `sdd` is offered as an alternative, obtain explicit user acceptance before starting it. `axiom-autopilot` remains the SDD orchestrator. `flow=knowledge_only` reuses `axiom knowledge harvest --increment <id>` and does not create an increment or bug. `flow=emergency` requires explicit confirmation and a visible scope, and never enables auto-push.
+
 Execute this workflow:
 
 1. Understand the increment request.

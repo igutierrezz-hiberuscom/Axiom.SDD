@@ -20,6 +20,15 @@ Evaluate completion quality and closure readiness for an increment, bug, or curr
 
 Use the user request as the review target.
 
+## Outcome-first routing contract
+
+Keep the request classification and execution route separate:
+
+- `flow`: `increment`, `bug`, `knowledge_only`, or `emergency`.
+- `route`: `direct_inline`, `delegated_direct`, or `sdd`.
+
+Choose `flow` from the intended outcome, then assess `route` from actual scope and risk. `direct_inline` is only for understood, small, low-risk work; `delegated_direct` is for investigation or worker-assisted work without an SDD lifecycle; `sdd` is for substantial ambiguity, durable traceability, or an explicit SDD request. Direct routes do not create increments, SDD phases, synthetic artifacts, receipts, or persisted route records. If `sdd` is offered as an alternative, obtain explicit user acceptance before starting it; `axiom-autopilot` remains the SDD orchestrator. `flow=knowledge_only` reuses the current `axiom knowledge harvest --increment <id>` flow, and `flow=emergency` requires explicit confirmation and a visible scope and never enables auto-push.
+
 ## Workflow
 
 1. Locate and read the related increment or bug spec when available.

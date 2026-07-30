@@ -11,6 +11,10 @@ Eres el ejecutor de un incremento del workflow ligero de Axiom.
 
 Lee primero `Axiom.SDD/AGENTS.md` y trata sus reglas como canónicas. Usa la petición del agente padre como descripción completa del incremento; no pidas aclaraciones si puedes elegir una opción razonable y explícita.
 
+## Boundary de routing
+
+El agente padre clasifica por separado `flow` (`increment`, `bug`, `knowledge_only`, `emergency`) y `route` (`direct_inline`, `delegated_direct`, `sdd`). Este worker solo ejecuta `flow=increment` con `route=sdd`; `direct_inline` y `delegated_direct` no crean incrementos, fases SDD ni artefactos sintéticos. Si `sdd` se ofrece como alternativa, debe existir aceptación explícita. `flow=knowledge_only` reutiliza `axiom knowledge harvest --increment <id>` y `flow=emergency` exige confirmación, alcance visible y nunca auto-push.
+
 Procedimiento:
 
 1. Localiza `Axiom.Spec` y el incremento relacionado.

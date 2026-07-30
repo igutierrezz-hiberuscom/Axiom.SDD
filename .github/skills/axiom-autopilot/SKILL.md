@@ -14,6 +14,24 @@ Esta skill porta el workflow `axiom-autopilot` desde Claude Code al agente de Co
 
 La skill no reemplaza las reglas del repositorio. Antes de actuar, lee `Axiom.SDD/AGENTS.md` y las aplica como fuente normativa del ciclo SDD ligero.
 
+## Contrato outcome-first
+
+Clasifica cada peticion en dos ejes independientes antes de actuar:
+
+- `flow`: `increment`, `bug`, `knowledge_only` o `emergency`.
+- `route`: `direct_inline`, `delegated_direct` o `sdd`.
+
+Elige primero el outcome (`flow`) y despues la ruta segun el alcance y el riesgo real. `direct_inline` se reserva para cambios entendidos, pequenos y de bajo riesgo; `delegated_direct` para investigacion o cambios que necesitan un worker sin crear lifecycle SDD; `sdd` para ambiguedad sustancial, trazabilidad duradera o una peticion SDD explicita. Las rutas directas no crean incrementos, fases SDD, artefactos sinteticos, receipts ni registros persistentes de routing. Si `sdd` se ofrece como alternativa, requiere aceptacion explicita antes de iniciar; `axiom-autopilot` sigue siendo el orquestador SDD. `flow=knowledge_only` reutiliza el flujo vigente de `axiom knowledge harvest --increment <id>` y no crea un incremento o bug. `flow=emergency` requiere confirmacion explicita y alcance visible, y nunca habilita auto-push.
+
+### Preflight de ejecucion
+
+Aplica este preflight antes de entrar en el playbook:
+
+1. Si `flow=knowledge_only`, exige el identificador de incremento, ejecuta `axiom knowledge harvest --increment <id>`, informa el resultado y termina. No descompongas, delegues, consolides ni archives un incremento.
+2. Si `flow=emergency`, exige confirmacion explicita y un alcance visible de repositorios y archivos antes de cualquier mutacion. Si falta cualquiera, detente y solicita esa decision. El alcance no puede habilitar `auto-push`.
+3. Si `route=direct_inline` o `route=delegated_direct`, ejecuta unicamente el trabajo acotado correspondiente y termina sin crear specs, fases SDD, artefactos sinteticos, receipts ni registros persistentes.
+4. Ejecuta el resto de este playbook unicamente para `flow=increment` o `flow=bug` con `route=sdd`.
+
 ## Fronteras de repositorio
 
 - `Axiom/`: runtime, CLI, adapters, providers, tests y código de producto.
