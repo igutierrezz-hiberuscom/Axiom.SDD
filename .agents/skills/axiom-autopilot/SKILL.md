@@ -105,8 +105,11 @@ ask the user a question — pick the most reasonable option and move on.
 ### 2. Optional lightweight grounding
 ### 3. Decompose into focused increments (`INC-<YYYYMMDD>-<slug>`)
 ### 4. Spawn a self-contained `axiom-increment` subagent per increment
+- Delegate to subagents using a typed, deterministic scope (avoid vague descriptions).
+- Verify the freeze (`axiom freeze --increment <id>`) of each candidate BEFORE handing it to a subagent for apply.
 ### 5. Auto-answer ambiguity; record every decision
 ### 6. Independently verify each increment after it returns
+- Capture and verify the phase log's cryptographic receipts (`axiom phase receipt`) to certify the subagent executed under verifiable governance.
 ### 7. Final cross-increment integration into canonical specs (`Axiom.Spec/specs/00..08`)
 ### 7b. Reconcile technical context (`Axiom.Spec/context/**`)
 ### 8. Archive every increment (`Axiom.Spec/specs/increments/_archive/<INC-id>/`)

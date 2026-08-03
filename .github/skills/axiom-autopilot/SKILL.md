@@ -72,11 +72,13 @@ Divide la lista en incrementos enfocados, verificables e independientes. Nómbra
 
 ### 4. Delegar cada incremento
 
+Antes de delegar el apply de un incremento, verifica que su candidate está congelado ejecutando `axiom freeze --increment <id>`; no envíes a un subagente el apply de un incremento cuyo freeze esté ausente o desactualizado. Esta verificación es un requisito formal del ciclo, no un paso opcional.
+
 Para cada incremento, invoca el custom agent `axiom-increment` con un brief autosuficiente que incluya:
 
 - objetivo y criterios de aceptación;
 - decisiones ya tomadas, sin convertirlas en preguntas abiertas;
-- archivos, paquetes y repositorios exactos;
+- un scope tipado y determinista: archivos, paquetes y repositorios exactos (nunca una descripción vaga que deje el alcance a criterio del subagente);
 - obligación de crear o actualizar `Axiom.Spec/specs/increments/<INC-id>/README.md` antes de implementar;
 - obligación de implementar en `Axiom/`, salvo que el incremento sea explícitamente documental o de tooling;
 - validación dirigida desde `Axiom/`;
@@ -111,6 +113,7 @@ Después de cada subagente, no aceptes su autoinforme sin comprobarlo:
 3. Lee directamente la parte de código con mayor riesgo.
 4. Comprueba cada criterio de aceptación contra el resultado real.
 5. Clasifica cada fallo como preexistente o introducido por el incremento.
+6. Captura y verifica los recibos criptográficos del phase log (`axiom phase receipt`) del incremento; es un requisito formal — no des el incremento por verificado ni integres su conocimiento en el paso 7 si los recibos faltan o no validan.
 
 No arregles fallos preexistentes no relacionados. Si la verificación descubre un defecto local introducido por el incremento, corrígelo en esa misma unidad y repite la validación.
 
@@ -191,5 +194,6 @@ Entrega un único resumen con:
 - No modifiques `Axiom.SDD` por cambios que pertenezcan a `Axiom` o `Axiom.Spec`, salvo los archivos de workflow necesarios para esta skill.
 - No introduzcas arquitectura enterprise, índices obligatorios, integraciones externas, MCP obligatorios ni Workbench si la petición no lo exige.
 - Mantén la regla `best-effort + no-clobber + created-gating` para cualquier scaffolding.
+- Trata la verificación del freeze (`axiom freeze --increment <id>`) antes de delegar el apply, y la captura/verificación de recibos (`axiom phase receipt`) antes de integrar conocimiento, como requisitos formales del ciclo; nunca los omitas.
 - No presentes un snapshot histórico como estado actual.
 - No finalices diciendo que el trabajo está cerrado si falta implementación, validación, integración documental o archivo.
