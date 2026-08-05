@@ -92,8 +92,9 @@ ask the user a question — pick the most reasonable option and move on.
   compiles the shared command files. `apps/cli` must import them from
   the package (never via relative path into the package's source) or
   the build breaks at runtime.
-- **`@axiom/tui` must stay generic.** No business/enum knowledge
-  belongs in the TUI package — it must remain a generic rendering/interaction layer.
+- **Retired terminal UI surfaces must not regain business ownership.** Keep
+  business and enum knowledge in shared runners and expose it through the
+  supported CLI, launcher or MCP surfaces.
 - **Scaffolding pattern: best-effort + no-clobber + created-gating.**
   Any scaffolding step (writing files into a repo on setup) must be
   best-effort, must never clobber pre-existing files, and must gate on whether the

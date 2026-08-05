@@ -37,7 +37,7 @@ Choose `flow` from the intended outcome, then assess `route` from actual scope a
 4. Verify validation evidence and coverage.
 5. Identify deviations, missing checks, and unresolved risks.
 6. Decide whether closure is justified (`closed`) or must remain `pending`.
-7. Recommend `Axiom.Spec/general-spec.md` updates only when stable knowledge should be consolidated.
+7. Recommend updates to the canonical `Axiom.Spec/specs/00..08` files only when stable knowledge should be consolidated.
 8. Propose a commit message that matches reviewed outcomes.
 
 ## Guardrails

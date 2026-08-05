@@ -25,7 +25,7 @@ Evaluate completion quality and closure readiness for an increment, bug, or curr
    - Write/update `review-ledger.md` inside `Axiom.Spec/specs/increments/<INC-id>/` or `Axiom.Spec/specs/bugs/<BUG-id>/`.
    - If no artifact folder exists, keep ledger in-context.
 7. Decide whether closure is justified (`closed`) or must remain `pending`.
-8. Recommend `Axiom.Spec/general-spec.md` updates only when stable knowledge should be consolidated.
+8. Recommend updates to the canonical `Axiom.Spec/specs/00..08` files only when stable knowledge should be consolidated.
 9. Propose a commit message that matches reviewed outcomes.
 
 ## Scoped re-review

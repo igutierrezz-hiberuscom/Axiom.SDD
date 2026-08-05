@@ -36,7 +36,7 @@ Execute this workflow:
 8. Implement focused changes in `Axiom/` or, when the increment is tooling-only, in `Axiom.SDD/`.
 9. Validate with available commands.
 10. Review implementation against acceptance criteria.
-11. Update `axiom-spec/general-spec.md` only with stable knowledge when needed.
+11. Update the canonical `Axiom.Spec/specs/00..08` files only with stable knowledge when needed.
 12. Mark increment status as `closed` or `pending` with explicit reason.
 13. Summarize changes, validation, status, and next step.
 
@@ -77,7 +77,7 @@ Date: YYYY-MM-DD
 
 ## General spec integration
 
-Describe what was integrated into `general-spec.md`, or why nothing was needed.
+Describe what was integrated into `Axiom.Spec/specs/00..08`, or why nothing was needed.
 ```
 
 Validation rule:

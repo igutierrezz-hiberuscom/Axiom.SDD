@@ -36,7 +36,7 @@ Execute this workflow:
 8. Implement a minimal focused fix in `axiom-sdd`.
 9. Validate, ideally with regression coverage when applicable.
 10. Review results against expected behavior and acceptance criteria.
-11. Update `axiom-spec/general-spec.md` only if stable behavior changed.
+11. Update the canonical `Axiom.Spec/specs/00..08` files only if stable behavior changed.
 12. Mark bug status as `closed` or `pending` with explicit reason.
 13. Summarize fix, validation, status, and next step.
 
@@ -81,7 +81,7 @@ Date: YYYY-MM-DD
 
 ## General spec integration
 
-Describe what was integrated into `general-spec.md`, or why nothing was needed.
+Describe what was integrated into `Axiom.Spec/specs/00..08`, or why nothing was needed.
 ```
 
 Validation rule:

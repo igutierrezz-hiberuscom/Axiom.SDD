@@ -35,7 +35,7 @@ Run the required behavior below only when `flow=increment` and `route=sdd`. For 
 8. Implement focused changes in `axiom-sdd` only after context is sufficient.
 9. Validate with available commands.
 10. Review against acceptance criteria.
-11. Update `axiom-spec/general-spec.md` with stable knowledge when applicable.
+11. Update the canonical `Axiom.Spec/specs/00..08` files with stable knowledge when applicable.
 12. Close as `closed` or `pending` with explicit reason.
 
 ## Increment template
@@ -70,7 +70,7 @@ Date: YYYY-MM-DD
 
 ## General spec integration
 
-Describe what was integrated into `general-spec.md`, or why nothing was needed.
+Describe what was integrated into `Axiom.Spec/specs/00..08`, or why nothing was needed.
 ```
 
 ## Validation fallback

@@ -30,7 +30,7 @@ When reviewing direct work, do not demand lifecycle artifacts that the route exp
 5. Review validation evidence and identify gaps.
 6. Detect deviations and unresolved risks.
 7. Decide closure recommendation (`closed` or `pending` with reason).
-8. Update `axiom-spec/general-spec.md` only when stable knowledge should be consolidated.
+8. Update the canonical `Axiom.Spec/specs/00..08` files only when stable knowledge should be consolidated.
 9. Propose a commit message consistent with the reviewed result.
 
 ## Output

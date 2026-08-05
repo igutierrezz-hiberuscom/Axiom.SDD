@@ -55,7 +55,7 @@ Run the workflow below only when `flow=increment` and `route=sdd`. For `direct_i
 7. Implement focused changes in `Axiom.SDD`.
 8. Run validation using available commands.
 9. Review results against acceptance criteria.
-10. Integrate stable knowledge into `Axiom.Spec/general-spec.md` when applicable.
+10. Integrate stable knowledge into the canonical `Axiom.Spec/specs/00..08` files when applicable.
 11. Set final increment status to `closed` or `pending` with explicit rationale.
 
 ## Increment Template
@@ -92,7 +92,7 @@ Date: YYYY-MM-DD
 
 ## General spec integration
 
-Describe what was integrated into `general-spec.md`, or why nothing was needed.
+Describe what was integrated into `Axiom.Spec/specs/00..08`, or why nothing was needed.
 ```
 
 ## Validation Discovery Order
@@ -126,7 +126,7 @@ Set status `closed` only when all are true:
 - Changes are implemented or no-code rationale is explicit.
 - Available validation was executed.
 - Review against acceptance criteria was completed.
-- Stable knowledge integration into `general-spec.md` was done when applicable.
+- Stable knowledge integration into `Axiom.Spec/specs/00..08` was done when applicable.
 - Result is documented clearly.
 
 Otherwise set `Status: pending` and explain why.
@@ -138,6 +138,6 @@ Return a concise report with:
 - implementation files changed
 - validation executed (or exact fallback statement)
 - acceptance criteria review result
-- general-spec integration decision
+- canonical spec integration decision
 - final status
 - next step

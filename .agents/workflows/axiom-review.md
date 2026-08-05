@@ -27,7 +27,7 @@ Choose `flow` from the intended outcome, then assess `route` from actual scope a
 5. Verify observed validation coverage and identify missing checks.
 6. Detect deviations and unresolved risks.
 7. Recommend closure state (`closed` or `pending`) with rationale.
-8. Update `axiom-spec/general-spec.md` only when stable knowledge consolidation is appropriate.
+8. Update the canonical `Axiom.Spec/specs/00..08` files only when stable knowledge consolidation is appropriate.
 9. Propose commit message aligned with review outcome.
 
 ## Stop Rules

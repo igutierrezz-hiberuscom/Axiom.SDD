@@ -34,7 +34,7 @@ Run the phases below only when `flow=increment` and `route=sdd`. For `direct_inl
 8. Implement focused changes in `axiom-sdd`.
 9. Run available validation commands.
 10. Review against acceptance criteria.
-11. Integrate stable knowledge into `axiom-spec/general-spec.md` if applicable.
+11. Integrate stable knowledge into the canonical `Axiom.Spec/specs/00..08` files if applicable.
 12. Set final status to `closed` or `pending` with explicit rationale.
 13. Emit concise execution summary.
 
@@ -50,5 +50,5 @@ Run the phases below only when `flow=increment` and `route=sdd`. For `direct_inl
 - Changes implemented in `axiom-sdd`
 - Validation performed (or explicit fallback statement)
 - Review against acceptance criteria
-- `general-spec.md` updated when stable knowledge applies
+- `Axiom.Spec/specs/00..08` updated when stable knowledge applies
 - Final status and next step

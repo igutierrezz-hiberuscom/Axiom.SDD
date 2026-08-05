@@ -36,7 +36,7 @@ Implement an increment with a lightweight spec-first workflow across sibling rep
 7. Implement focused changes in `Axiom.SDD`.
 8. Run validation using available commands.
 9. Review results against acceptance criteria.
-10. Integrate stable knowledge into `Axiom.Spec/general-spec.md` when applicable.
+10. Integrate stable knowledge into the canonical `Axiom.Spec/specs/00..08` files when applicable.
 11. Set final increment status to `closed` or `pending` with explicit rationale.
 
 ## Increment Template

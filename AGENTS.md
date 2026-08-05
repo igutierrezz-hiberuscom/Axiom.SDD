@@ -19,10 +19,13 @@ Use this repository for implementation and tooling work, including:
 
 Use `Axiom.Spec` as the canonical specification repository. It should contain, or evolve toward, this structure:
 
-- `AGENTS.md`
-- `general-spec.md`
-- `increments/`
-- `bugs/`
+- `specs/` (numbered canonical specs, with `specs/increments/` and `specs/bugs/`)
+- `context/`
+- `bugs/` and `increments/` (existing top-level artifact roots; canonical workspace specs are under `specs/`)
+- `technical-context/` (derived technical-context indexes)
+- `plans/`
+- `templates/`
+- `prompts/`
 - `decisions/`
 
 Canonical product and behavior knowledge must be consolidated there.
@@ -38,7 +41,7 @@ When a parent workspace includes `Axiom.SDD`, `Axiom.Spec`, and optional `Axiom`
 1. Identify which repository each requested change belongs to.
 2. Refine canonical increment or bug specs in `Axiom.Spec` first.
 3. Implement code changes in `Axiom.SDD`.
-4. Update `Axiom.Spec/general-spec.md` only with stable, consolidated knowledge.
+4. Update the owning files under `Axiom.Spec/specs/`, `Axiom.Spec/context/`, or `Axiom.Spec/decisions/` only with stable, consolidated knowledge.
 
 ## Bootstrap Lifecycle (Increments and Bugs)
 
@@ -53,7 +56,7 @@ For increments and bugs, follow this lifecycle:
 7. Validate using available tests, build commands, lint commands, or manual inspection.
 8. Review the result against the original intent and acceptance criteria.
 9. Close or leave pending with explicit reason.
-10. Integrate stable knowledge into `Axiom.Spec/general-spec.md`.
+10. Integrate stable knowledge into the owning file under `Axiom.Spec/`.
 
 ## General Rules
 
@@ -86,14 +89,14 @@ If something appears useful but belongs to the future enterprise product lifecyc
 
 ## Increment Rules
 
-- Create or update increment specs in `Axiom.Spec/increments/`.
+- Create or update increment specs in `Axiom.Spec/specs/increments/`.
 - If that path does not exist, use the equivalent increment folder in the spec repository structure.
 - Keep increment specs concise and actionable.
 - Do not mark an increment as `closed` unless closure rules are fully satisfied.
 
 ## Bug Rules
 
-- Create or update bug specs in `Axiom.Spec/bugs/`.
+- Create or update bug specs in `Axiom.Spec/specs/bugs/`.
 - If that path does not exist, use the equivalent bug folder in the spec repository structure.
 - Clarify expected behavior before implementation.
 - Do not mark a bug as `closed` unless closure rules are fully satisfied.
@@ -118,9 +121,9 @@ If no validation command is found, use this exact statement:
 When closing an increment or bug:
 
 1. Update its own file first.
-2. Update `Axiom.Spec/general-spec.md` only with stable knowledge.
-3. Do not copy the full implementation history into `general-spec.md`.
-4. Keep `general-spec.md` clean, consolidated, and reusable.
+2. Update the owning canonical file under `Axiom.Spec/` only with stable knowledge.
+3. Do not copy the full implementation history into a canonical specification.
+4. Keep canonical specifications clean, consolidated, and reusable.
 5. If no stable knowledge needs integration, state that explicitly in the increment or bug file.
 
 ## Closure Rules
@@ -132,7 +135,7 @@ An increment or bug can be marked `closed` only if all are true:
 - Changes were implemented, or no-code rationale is explicit.
 - Available validation was executed.
 - Review against intent and acceptance criteria was done.
-- Stable knowledge was integrated into `Axiom.Spec/general-spec.md` when applicable.
+- Stable knowledge was integrated into the owning `Axiom.Spec` file when applicable.
 - Result was documented clearly.
 
 If any item is missing, set:

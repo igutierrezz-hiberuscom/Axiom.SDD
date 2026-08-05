@@ -35,7 +35,7 @@ Run the required behavior below only when `flow=bug` and `route=sdd`. For `direc
 8. Implement a minimal fix in `axiom-sdd` only when context is sufficient.
 9. Validate, ideally with regression coverage when applicable.
 10. Review against expected behavior and acceptance criteria.
-11. Update `axiom-spec/general-spec.md` if stable behavior changed.
+11. Update the canonical `Axiom.Spec/specs/00..08` files if stable behavior changed.
 12. Close as `closed` or `pending` with explicit reason.
 
 ## Strong rule
@@ -74,7 +74,7 @@ Date: YYYY-MM-DD
 
 ## General spec integration
 
-Describe what was integrated into `general-spec.md`, or why nothing was needed.
+Describe what was integrated into `Axiom.Spec/specs/00..08`, or why nothing was needed.
 ```
 
 ## Validation fallback

@@ -35,7 +35,7 @@ Run the phases below only when `flow=bug` and `route=sdd`. For `direct_inline`, 
 8. Implement minimal focused fix in `axiom-sdd`.
 9. Validate fix and add regression coverage when applicable.
 10. Review against expected behavior and acceptance criteria.
-11. Integrate stable behavior updates into `axiom-spec/general-spec.md` when needed.
+11. Integrate stable behavior updates into the canonical `Axiom.Spec/specs/00..08` files when needed.
 12. Set final status to `closed` or `pending` with explicit rationale.
 13. Emit concise execution summary.
 
@@ -51,5 +51,5 @@ Run the phases below only when `flow=bug` and `route=sdd`. For `direct_inline`, 
 - Minimal fix implemented in `axiom-sdd`
 - Validation or regression evidence (when applicable)
 - Review against expected behavior
-- `general-spec.md` updated when stable behavior changed
+- `Axiom.Spec/specs/00..08` updated when stable behavior changed
 - Final status and next step

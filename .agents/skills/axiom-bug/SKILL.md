@@ -32,7 +32,7 @@ Resolve a bug with minimal focused changes and explicit expected behavior.
 7. Implement a minimal focused fix in `Axiom.SDD`.
 8. Run validation, including regression checks when applicable.
 9. Review results against expected behavior and acceptance criteria.
-10. Integrate stable behavior knowledge into `Axiom.Spec/general-spec.md` when applicable.
+10. Integrate stable behavior knowledge into the canonical `Axiom.Spec/specs/00..08` files when applicable.
 11. Set final bug status to `closed` or `pending` with explicit rationale.
 
 ## Bug Template

@@ -27,7 +27,7 @@ Execute this workflow:
 4. Review validation evidence and command coverage.
 5. Detect deviations, missing checks, or unresolved risks.
 6. Decide whether the work can be closed or should remain pending.
-7. Update `axiom-spec/general-spec.md` only if stable knowledge must be consolidated.
+7. Update the canonical `Axiom.Spec/specs/00..08` files only if stable knowledge must be consolidated.
 8. Provide a suggested commit message aligned with actual outcomes.
 
 Output format:
