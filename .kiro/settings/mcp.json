@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "codegraph": {
+      "command": "C:\\Users\\igutierrezz\\AppData\\Local\\codegraph\\current\\bin\\codegraph.cmd",
+      "args": [
+        "serve",
+        "--mcp",
+        "--path",
+        "C:\\repos\\Axiom Workspace\\Axiom"
+      ]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "engram": {
+      "command": "C:\\Users\\igutierrezz\\go\\bin\\engram.exe",
+      "args": [
+        "mcp",
+        "--tools=agent"
+      ]
+    }
+  }
+}
